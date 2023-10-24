@@ -7,10 +7,6 @@ function App() {
   return (
     <div className="dark:bg-gray-900 flex flex-col">
       <Navbar />
-      {/* <Routes>
-        <Route path="/" element={<Cards />} />
-        <Route path="/about" element={<About />} />
-      </Routes> */}
       <Cards />
       <Footer />
     </div>
