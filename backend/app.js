@@ -10,6 +10,8 @@ app.use(express.json())
 
 app.use("/api/v1", newsRouter)
 
+app.use(express.static("public"))
+
 app.listen(PORT, () => {
   console.log("Server listening at http://localhost:" + PORT)
 })
