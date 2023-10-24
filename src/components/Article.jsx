@@ -1,8 +1,6 @@
-import React from "react";
-
 function Article({ post }) {
   function randomInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min
   }
 
   return (
@@ -21,7 +19,9 @@ function Article({ post }) {
             <h2 className="tracking-widest text-xs title-font font-medium mb-1 uppercase">
               {post.section}
             </h2>
-            <h1 className="title-font text-lg font-medium mb-3">{post.title}</h1>
+            <h1 className="title-font text-lg font-medium mb-3">
+              {post.title}
+            </h1>
             <p className="leading-relaxed mb-3">{post.abstract}</p>
           </div>
         </div>
@@ -79,7 +79,7 @@ function Article({ post }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Article;
+export default Article

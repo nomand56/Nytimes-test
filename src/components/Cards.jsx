@@ -1,29 +1,27 @@
-import { useQuery } from "@tanstack/react-query";
-import Article from "./Article";
-import Loader from "./Loader";
-
-const apiKey = import.meta.env.VITE_NYLATEST_KEY;
+import { useQuery } from "@tanstack/react-query"
+import Article from "./Article"
+import Loader from "./Loader"
 
 async function load() {
-  const response = await fetch(
-    `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${apiKey}`
-  );
+  let response = await fetch("http://localhost:4000/api/v1/topstories")
 
-  if (!response.ok) {
-    throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
-  }
+  if (!response.ok) throw new Error("Failed to fetch data from API.")
 
-  return await response.json();
+  response = await response.json()
+
+  if (response.error) throw new Error(response.error)
+
+  return response.data
 }
 
 const Cards = () => {
   const { data, error, isLoading } = useQuery({
     queryKey: ["data"],
-    queryFn: load,
-  });
+    queryFn: load
+  })
 
   if (isLoading) {
-    return <Loader />;
+    return <Loader />
   }
 
   if (error) {
@@ -31,20 +29,20 @@ const Cards = () => {
       <div className="flex items-center justify-center h-screen font-mono text-red-500">
         <span>Error: {error.message}</span>
       </div>
-    );
+    )
   }
-
-  const articles = data.results
-    .filter((post) => post.multimedia)
-    .map((post, index) => <Article post={post} key={index} />);
 
   return (
     <section className="text-gray-600 body-font">
       <div className="container px-5 py-16 mx-auto">
-        <div className="flex flex-wrap -m-4">{articles}</div>
+        <div className="flex flex-wrap -m-4">
+          {data.map((post, index) => (
+            <Article post={post} key={index} />
+          ))}
+        </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Cards;
+export default Cards

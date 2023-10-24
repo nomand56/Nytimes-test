@@ -1,16 +1,15 @@
-import React from "react";
-import DarkModeToggle from "./DarkModeToggle";
+import DarkModeToggle from "./DarkModeToggle"
 
 function Navbar() {
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex items-start justify-between mx-auto p-4">
-          <a className="flex items-center">
-            <img src="/nytime.png" className="h-8 mr-3" alt="Flowbite Logo" />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              New York Times
-            </span>
-          </a>
+        <a className="flex items-center">
+          <img src="/nytime.png" className="h-8 mr-3" alt="Flowbite Logo" />
+          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+            New York Times
+          </span>
+        </a>
         <button
           data-collapse-toggle="navbar-default"
           type="button"
@@ -37,7 +36,6 @@ function Navbar() {
         </button>
         <div className="hidden w-full md:block md:w-auto" id="navbar-default">
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-          
             <li>
               <DarkModeToggle />
             </li>
@@ -45,7 +43,7 @@ function Navbar() {
         </div>
       </div>
     </nav>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar

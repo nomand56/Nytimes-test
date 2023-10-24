@@ -1,12 +1,12 @@
-import React from "react";
-import { DarkModeSwitch } from "react-toggle-dark-mode";
+import { useState } from "react"
+import { DarkModeSwitch } from "react-toggle-dark-mode"
 
 const DarkModeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = React.useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false)
   const toggleDarkMode = () => {
-    document.documentElement.classList.toggle("dark");
-    setIsDarkMode(!isDarkMode);
-  };
+    document.documentElement.classList.toggle("dark")
+    setIsDarkMode(!isDarkMode)
+  }
 
   return (
     <DarkModeSwitch
@@ -15,7 +15,7 @@ const DarkModeToggle = () => {
       onChange={toggleDarkMode}
       size={30}
     />
-  );
-};
+  )
+}
 
-export default DarkModeToggle;
+export default DarkModeToggle
