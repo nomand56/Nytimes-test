@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
-import Article from "./Article"
+import Card from "./Card"
 import Loader from "./Loader"
 
 async function load() {
@@ -37,7 +37,7 @@ const Cards = () => {
       <div className="container px-5 py-16 mx-auto">
         <div className="flex flex-wrap -m-4">
           {data.map((post, index) => (
-            <Article post={post} key={index} />
+            <Card post={post} key={index} />
           ))}
         </div>
       </div>
