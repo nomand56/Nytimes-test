@@ -20,7 +20,7 @@ const DarkModeToggle = () => {
       className="flex flex-col border border-gray-100 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 p-2"
       onClick={toggleDarkMode}
     >
-      <DarkModeSwitch checked={!isDarkMode} size={28} onChange={() => {}} />
+      <DarkModeSwitch checked={!isDarkMode} size={22} onChange={() => {}} />
     </button>
   )
 }

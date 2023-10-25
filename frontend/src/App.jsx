@@ -5,7 +5,7 @@ import Footer from "./components/footer"
 
 function App() {
   return (
-    <div className="dark:bg-gray-900 flex flex-col">
+    <div className="dark:bg-gray-900 flex flex-col min-h-screen">
       <Navbar />
       <Cards />
       <Footer />

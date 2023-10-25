@@ -3,7 +3,7 @@ import DarkModeToggle from "./DarkModeToggle"
 function Navbar() {
   return (
     <nav className="bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 sticky border-b-2 top-0 z-10">
-      <div className="container flex items-start justify-between mx-auto p-4">
+      <div className="container flex items-start justify-between mx-auto p-4 items-center">
         <a className="flex items-center p-2">
           <svg
             className="fill-black dark:fill-white"

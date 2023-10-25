@@ -1,6 +1,6 @@
 function Loader() {
   return (
-    <div className="flex font-mono h-screen items-center justify-center text-red-500">
+    <div className="flex grow items-center justify-center font-mono">
       <svg
         className="inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-black dark:fill-white"
         viewBox="0 0 100 101"
